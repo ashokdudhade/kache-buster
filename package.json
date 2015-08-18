@@ -1,0 +1,13 @@
+{
+  "name": "superBust",
+  "description": "cache busting gulp package",
+  "dependencies": {},
+  "dependencies":{
+      "cheerio": "^0.19.0",
+      "crypto":
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "mocha": "^2.2.5"
+  }
+}
