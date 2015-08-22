@@ -11,64 +11,23 @@ describe('Super cache bust test', function() {
 
     describe('superBust with valid param', function() {
         it('Should return content with scripts and links versioned', function() {
+            var content = "<html><script src='data/some.js?nnn=nn&version=kk'></script><script src='data/someOther.js'></script><link rel='stylesheet' href = 'data/somecss.css'></link></html>";
+
+            var regex = /src='data\/someOther.js'/;
+            var isVersionExists = !regex.test(content);
+
             var content = superBust.applyVersion({
-                "content": "<html><script src='data/some.js?nnn=nn&version=kk'></script><script src='data/someOther.js'></script><link rel='stylesheet' href = 'data/somecss.css'></link></html>",
-                                versionType : "timestamp"
+                content: content,
+                sourceDir: "/test",
+                versionType : "MD5"
             });
-            console.log(content);
-            //assert.nptEqual(content, undefined);
+            assert.equal(isVersionExists, false);
+            assert.equal(/'data\/someOther.js\?version([^$]*)'/.test(content), true);
+            assert.equal(/'data\/somecss.css\?version([^$]*)'/.test(content), true);
+            assert.equal(/version=kk'/.test(content), false);
+
         });
     });
 
-    describe('isCdnUrl test', function() {
-        it(' should return false for empty string imput', function() {
-            var isCdnUrl = superBust.isCdnUrl('');
-            assert.equal(isCdnUrl, false);
-        });
-
-        it(' should return false for undefined imput', function() {
-            var isCdnUrl = superBust.isCdnUrl(undefined);
-            assert.equal(isCdnUrl, false);
-        });
-
-        it(' should return false for non cdn path', function() {
-            var isCdnUrl = superBust.isCdnUrl('data/src.js');
-            assert.equal(isCdnUrl, false);
-        });
-
-        it(' should return false for non cdn path with http in name', function() {
-            var isCdnUrl = superBust.isCdnUrl('httpdata/src.js');
-            assert.equal(isCdnUrl, false);
-        });
-
-        it(' should return false for non cdn path with https in name', function() {
-            var isCdnUrl = superBust.isCdnUrl('httpsdata/src.js');
-            assert.equal(isCdnUrl, false);
-        });
-
-        it(' should return true for valid http cdn path', function() {
-            var isCdnUrl = superBust.isCdnUrl('http://somedomain.com/data/src.js');
-            assert.equal(isCdnUrl, true);
-        });
-
-        it(' should return true for valid https cdn path', function() {
-            var isCdnUrl = superBust.isCdnUrl('https://somedomain.com/data/src.js');
-            assert.equal(isCdnUrl, true);
-        });
-
-    });
-
-    describe('getFileContent tests', function() {
-        it('should return empty string when empty path is passed', function() {
-            var fileContent = superBust.getFileContent('');
-            assert.equal(fileContent, '');
-        });
-
-        it('should return undefined when undefined is passed', function() {
-            var fileContent = superBust.getFileContent(undefined);
-            assert.equal(fileContent, undefined);
-        });
-
-    });
 
 });
