@@ -13,8 +13,7 @@ describe('Super cache bust test', function() {
         it('Should return content with scripts and links versioned', function() {
             var content = superBust.applyVersion({
                 "content": "<html><script src='data/some.js?nnn=nn&version=kk'></script><script src='data/someOther.js'></script><link rel='stylesheet' href = 'data/somecss.css'></link></html>",
-                sourceDir: "/test",
-                versionType : "timestamp"
+                                versionType : "timestamp"
             });
             console.log(content);
             //assert.nptEqual(content, undefined);
