@@ -1,3 +1,4 @@
 language: node_js
 before_script:
-  istanbul cover _mocha -- -R spec
+- npm install -g istanbul
+- istanbul cover _mocha -- -R spec
