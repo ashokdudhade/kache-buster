@@ -10,5 +10,8 @@
         "gulp": "^3.9.0",
         "mocha": "^2.2.5"
     },
-    "licence" : "MIT"
+    "scripts": {
+        "test": "mocha"
+    },
+    "licence": "MIT"
 }
