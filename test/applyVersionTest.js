@@ -5,7 +5,7 @@ describe('Super cache bust test', function() {
 
     describe('superBust with invalid param', function() {
         it('Should return nothing with invalid paramter', function() {
-            var content = superBust.applyVersion();``
+            var content = superBust.applyVersion();
             assert.equal(content, undefined);
         });
     });
