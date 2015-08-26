@@ -8,7 +8,9 @@
     },
     "devDependencies": {
         "gulp": "^3.9.0",
-        "mocha": "^2.2.5"
+        "mocha": "^2.2.5",
+        "istanbul": "latest",
+        "coveralls": "latest"
     },
     "scripts": {
         "test": "mocha"
