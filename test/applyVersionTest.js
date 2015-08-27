@@ -12,7 +12,7 @@ describe('Super cache bust test', function() {
 
     describe('superBust with valid param', function() {
         it('Should return content with scripts and links versioned MD5 from source directory', function() {
-            var content = "<html><script src='data/some.js?nnn=nn&version=kk'></script><script src='data/someOther.js'></script><link rel='stylesheet' href = 'data/somecss.css'></link></html>";
+            var content = "<html><script src='data/some.js?nnn=nn&version=kk'></script><script src='data/some.js?hash=mm'></script><script src='data/someOther.js'></script><link rel='stylesheet' href = 'data/somecss.css'></link></html>";
 
             var regex = /version=kk'/;
             var isVersionExists = !regex.test(content);
@@ -26,6 +26,7 @@ describe('Super cache bust test', function() {
             assert.equal(/'data\/someOther.js\?version([^$]*)'/.test(content), true);
             assert.equal(/'data\/somecss.css\?version([^$]*)'/.test(content), true);
             assert.equal(/version=kk'/.test(content), false);
+            assert.equal(/'data\/some.js\?hash=mm&version/.test(content), true);
 
         });
 
