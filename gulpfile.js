@@ -1,7 +1,7 @@
 var gulp = require('gulp');
-var superBust = require('./bin/superBust.js');
+var kacheBuster = require('./index.js');
 gulp.task('default', function() {
     return gulp.src('test/data/*.html')
-        .pipe(superBust())
+        .pipe(kacheBuster({ versionType: "MD5", sourceDir : "/test"}))
         .pipe(gulp.dest('./tmp'));
 });
