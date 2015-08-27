@@ -1,5 +1,6 @@
 {
-    "name": "superBust",
+    "name": "kacheBuster",
+    "version": "1.0.0",
     "description": "cache busting gulp package",
     "dependencies": {},
     "dependencies": {
