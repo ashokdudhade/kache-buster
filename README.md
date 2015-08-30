@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/ashokdudhade/kache-buster.svg?branch=master)](https://travis-ci.org/ashokdudhade/kache-buster)
+[![Build Status](https://travis-ci.org/ashokdudhade/kache-buster.svg?branch=master)](https://travis-ci.org/ashokdudhade/kache-buster) [![Coverage Status](https://coveralls.io/repos/ashokdudhade/kache-buster/badge.svg?branch=master&service=github)](https://coveralls.io/github/ashokdudhade/kache-buster?branch=master)
 
 kache-buster
 ============
