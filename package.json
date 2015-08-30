@@ -1,6 +1,6 @@
 {
     "name": "kache-buster",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "cache busting gulp package",
     "dependencies": {},
     "dependencies": {
