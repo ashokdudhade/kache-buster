@@ -5,8 +5,8 @@
     "dependencies": {},
     "dependencies": {
         "cheerio": "^0.19.0",
-        "crypto": "latest",
-        "through2": "latest"
+        "crypto": "^0.0.3",
+        "through2": "^2.0.0"
     },
     "devDependencies": {
         "gulp": "^3.9.0",
@@ -16,6 +16,20 @@
     },
     "scripts": {
         "test": "mocha"
+    },
+    "keywords": [
+        "cache",
+        "kache",
+        "bust",
+        "buster",
+        "static",
+        "gulp"
+    ],
+    "author": "Ashok Dudhade <ashok.dudhade@outlook.com>",
+    "contributors": [],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ashokdudhade/kache-buster.git"
     },
     "licence": "MIT"
 }
