@@ -1,23 +1,23 @@
 var assert = require("assert");
-var superBust = require("../lib/applyVersion.js");
+var kacheBust = require("../lib/applyVersion.js");
 
-describe('Super cache bust test', function() {
+describe('Kache bust test', function() {
 
-    describe('superBust with invalid param', function() {
+    describe('kacheBust with invalid param', function() {
         it('Should return nothing with invalid paramter', function() {
-            var content = superBust.applyVersion();
+            var content = kacheBust.applyVersion();
             assert.equal(content, undefined);
         });
     });
 
-    describe('superBust with valid param', function() {
+    describe('kacheBust with valid param', function() {
         it('Should return content with scripts and links versioned MD5 from source directory', function() {
             var content = "<html><script src='data/some.js?nnn=nn&version=kk'></script><script src='data/some.js?hash=mm'></script><script src='data/someOther.js'></script><link rel='stylesheet' href = 'data/somecss.css'></link></html>";
 
             var regex = /version=kk'/;
             var isVersionExists = !regex.test(content);
 
-            content = superBust.applyVersion({
+            content = kacheBust.applyVersion({
                 content: content,
                 sourceDir: "/test",
                 versionType: "MD5"
@@ -36,7 +36,7 @@ describe('Super cache bust test', function() {
             var regex = /version=kk'/;
             var isVersionExists = !regex.test(content);
 
-            content = superBust.applyVersion({
+            content = kacheBust.applyVersion({
                 content: content,
                 versionType: "MD5"
             });
@@ -51,12 +51,12 @@ describe('Super cache bust test', function() {
         it('Should return same content if no change in static content files', function() {
             var content = "<html><script src='test/data/some.js?nnn=nn&version=kk'></script><script src='test/data/someOther.js'></script><link rel='stylesheet' href = 'test/data/somecss.css'></link></html>";
 
-            var firstContent = superBust.applyVersion({
+            var firstContent = kacheBust.applyVersion({
                 content: content,
                 versionType: "MD5"
             });
 
-            var secondContent = superBust.applyVersion({
+            var secondContent = kacheBust.applyVersion({
                 content: content,
                 versionType: "MD5"
             });
@@ -71,7 +71,7 @@ describe('Super cache bust test', function() {
             var regex = /version=kk'/;
             var isVersionExists = !regex.test(content);
 
-            content = superBust.applyVersion({
+            content = kacheBust.applyVersion({
                 content: content,
                 sourceDir: "/test",
                 versionType: "MD5"
@@ -89,7 +89,7 @@ describe('Super cache bust test', function() {
             var regex = /version=kk'/;
             var isVersionExists = !regex.test(content);
 
-            content = superBust.applyVersion({
+            content = kacheBust.applyVersion({
                 content: content,
                 sourceDir: "/test",
                 versionType: "custom",
@@ -109,7 +109,7 @@ describe('Super cache bust test', function() {
             var regex = /version=kk'/;
             var isVersionExists = !regex.test(content);
 
-            content = superBust.applyVersion({
+            content = kacheBust.applyVersion({
                 content: content,
                 sourceDir: "/test",
                 versionType: "custom",
