@@ -1,7 +1,7 @@
 [![Build Status][image-1]][1] [![Coverage Status][image-2]][2]
 
 kache-buster
-![kache-buster]()(about/Kache-Buster.png)
+![kache-buster](about/Kache-Buster.png)
 ============
 
 Usage
