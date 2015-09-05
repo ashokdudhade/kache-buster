@@ -1,12 +1,11 @@
 [![Build Status][image-1]][1] [![Coverage Status][image-2]][2]
 
-kache-buster
-============
+<img src="./images/Kache-Buster.png" alt="Kache Buster" style="width:70px"> kache-buster
+====================================================
 
-![Kache Buster](about/Kache-Buster.png)
 
 Usage
----- 
+----
 
 * MD5 of static content file
 
