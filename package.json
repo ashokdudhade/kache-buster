@@ -1,11 +1,10 @@
 {
     "name": "kache-buster",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "cache busting gulp package",
     "dependencies": {},
     "dependencies": {
         "cheerio": "^0.19.0",
-        "crypto": "^0.0.3",
         "through2": "^2.0.0"
     },
     "devDependencies": {
